@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 10-10-2021 a las 23:09:53
+-- Tiempo de generación: 13-10-2021 a las 22:27:09
 -- Versión del servidor: 10.4.20-MariaDB
 -- Versión de PHP: 8.0.9
 
@@ -43,9 +43,7 @@ INSERT INTO `countries` (`id`, `pais`) VALUES
 (4, 'Paraguay'),
 (5, 'Ecuador'),
 (6, 'Colombia'),
-(7, 'Chile'),
-(10, 'Peru'),
-(11, 'Bolivia');
+(7, 'Chile');
 
 -- --------------------------------------------------------
 
@@ -77,17 +75,33 @@ INSERT INTO `teams` (`id`, `nombre_equipo`, `cantidad_libertadores`, `cantidad_s
 (9, 'Gremio', 3, 0, 2),
 (10, 'Sao Pablo', 3, 1, 2),
 (11, 'Palmeiras', 2, 0, 2),
-(12, 'Chapecoense', 0, 1, 2),
+(12, 'Chapecoense', 3, 1, 2),
 (13, 'Colo-Colo', 1, 0, 7),
-(14, 'Universidad de Chile', 0, 1, 7),
-(15, 'Peñarol', 5, 0, 3),
 (16, 'Nacional', 3, 0, 3),
 (17, 'Atletico Nacional', 2, 0, 6),
-(18, 'Once Caldas', 1, 0, 6),
 (19, 'Olimpia', 3, 0, 4),
-(20, 'Liga De Quito', 1, 1, 5),
 (21, 'Ind. Del Valle', 0, 1, 5),
-(22, 'Argentinos Juniors', 1, 0, 1);
+(26, 'Argentinos Juniors', 1, 0, 1);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `users`
+--
+
+CREATE TABLE `users` (
+  `id` int(11) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `password` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `users`
+--
+
+INSERT INTO `users` (`id`, `email`, `password`) VALUES
+(2, 'lautarovg147@gmail.com', '$2a$12$.ZGfx7G3caZeW3RT9aYlj.OHPxa6Glj1GZKTjKPCeng6kXiqnFRg6'),
+(4, 'santireyes4.sr@gmail.com', '$2a$12$1fuHWajJJTTY3RkYu0qgPuHZu1G.11o834adSAsrO.c8EDcePbMUe');
 
 --
 -- Índices para tablas volcadas
@@ -107,6 +121,12 @@ ALTER TABLE `teams`
   ADD KEY `id_pais` (`id_pais`);
 
 --
+-- Indices de la tabla `users`
+--
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT de las tablas volcadas
 --
 
@@ -114,13 +134,19 @@ ALTER TABLE `teams`
 -- AUTO_INCREMENT de la tabla `countries`
 --
 ALTER TABLE `countries`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT de la tabla `teams`
 --
 ALTER TABLE `teams`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+
+--
+-- AUTO_INCREMENT de la tabla `users`
+--
+ALTER TABLE `users`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- Restricciones para tablas volcadas
