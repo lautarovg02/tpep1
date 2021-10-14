@@ -11,7 +11,7 @@ class teamView{
     }
    
     function showAllCountries($countries){
-        $this->smarty->assign('titulo','Seleccione el pais del cual quiere ver los campeones');
+        $this->smarty->assign('titulo','Paises Sudamericanos Consagrados ');
         $this->smarty->assign('countries', $countries);
         $this->smarty->display('templates/countries.tpl');
     }

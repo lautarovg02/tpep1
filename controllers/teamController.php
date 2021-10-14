@@ -30,10 +30,17 @@ class teamController
         $this->view->showAllTeams($countrie, $teams);
     }
 
-    public function showTeamsByContries($id_team)
+    public function showTeamsByContries()
     {
-        $teams = $this->model->getTeamsbyCountries($id_team);
-        $this->view->showAllTeamsCountrie($teams);
+        if (!empty($_REQUEST['countriesbyteams'])) {
+
+            $id_team=$_REQUEST['countriesbyteams'];
+            $teams = $this->model->getTeamsbyCountries($id_team);
+            $this->view->showAllTeamsCountrie($teams); 
+        } else {
+            $this->view->showError();
+        }
+             
     }
 
 

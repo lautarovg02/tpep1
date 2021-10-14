@@ -34,7 +34,7 @@ switch ($params[0]) {
         break;
     case 'detallar':
         $controller = new teamController();
-        $controller->showTeamsByContries($params[1]);
+        $controller->showTeamsByContries();
         break;
     case 'teams':
         $controller = new teamController();
