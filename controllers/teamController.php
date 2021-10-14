@@ -14,7 +14,7 @@ class teamController
 
         $this->model = new teamModel();
         $this->view = new teamView();
-        $this->authHelper = new AuthHelper();
+        $this -> authHelper = new  AuthHelper ();
     }
 
     public function showCountries()
@@ -36,14 +36,9 @@ class teamController
         $this->view->showAllTeamsCountrie($teams);
     }
 
-    public function showCups($id_cups)
-    {
-        $cups = $this->model->getCupsTeams($id_cups);
-        $this->view->showCupsTeams($cups);
-    }
 
     public function showAdmin()
-    {   $this->authHelper->checkLoggedIn();
+    {   $this -> authHelper -> checkLoggedIn ();   
         $countrie = $this->model->getAllCountries();
         $teams = $this->model->getAllTeams();
         $this->view->showAdministrator($countrie, $teams);
@@ -51,6 +46,7 @@ class teamController
 
     public function addCountries()
     {
+
         if (!empty($_REQUEST['countrie'])) {
             $countrie = $_REQUEST['countrie'];
             $this->model->insertCountries($countrie);
@@ -63,9 +59,16 @@ class teamController
 
     public function deleteCountries($id)
     {
-        $this->model->delCountries($id);
+        $teams = $this->model->getTeamsbyCountries($id);
+        if(!empty($teams)){
+            $this->view->showError();
+            
+        }else{
+            $this->model->delCountries($id);
 
-        header("Location: " . administrator);
+            header("Location: " . administrator);
+        }
+       
     }
 
     public function UpdateCountrie()
