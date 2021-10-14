@@ -21,7 +21,7 @@
             <h4 class="text-capitalize">Editar categoria pais</h4>
             <form action="editCountrie" method="POST" class="my-4">
                 <div class="form-group">
-                    <label>Pais Del Equipo</label>
+                    <label>Pais </label>
                     <select name="selectCountries" class="form-control">
                         <option selected>-Elija el pais-</option>
                         {foreach from=$countries item=$countrie}
