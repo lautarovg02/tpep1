@@ -1,5 +1,4 @@
 <?php
-
 class AuthHelper {
     function __construct() {
         // abre la sessión siempre para usar el helper
@@ -18,6 +17,7 @@ class AuthHelper {
             header("Location: " . LOGIN);
             die();
         }
+
     }
 
     function logout() {
