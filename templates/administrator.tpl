@@ -144,7 +144,6 @@
                             <tr>
                                 <th scope="col">Seleccion</th>
                                 <th scope="col">Borrar</th>
-                                <th scope="col">Editar</th>
                             </tr>
                         </thead>
                         {foreach from=$countries item=$countrie }
@@ -152,7 +151,6 @@
                                 <tr>
                                     <td>{$countrie->pais}</td>
                                     <td><a class="btn btn-danger" href="deleteCountrie/{$countrie->id}">Borrar</a></td>
-                                    <td><a class="btn btn-secondary" href="editCountrie/{$countrie->id}">Editar</a></td>
                                 {/foreach}
                             </tr>
                         </tbody>
