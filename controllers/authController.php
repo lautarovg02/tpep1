@@ -1,5 +1,4 @@
 <?php
-
 require_once("models/userModel.php");
 require_once("views/authView.php");
 require_once("helpers/authHelpers.php");
